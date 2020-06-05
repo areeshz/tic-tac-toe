@@ -16,6 +16,20 @@ const signUp = (data) => {
   })
 }
 
+const signIn = (data) => {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/sign-in',
+    data: {
+      credentials: {
+        email: data.credentials.email,
+        password: data.credentials.password
+      }
+    }
+  })
+}
+
 module.exports = {
-  signUp
+  signUp,
+  signIn
 }

@@ -15,6 +15,18 @@ const onSignUp = (event) => {
     .catch(ui.signUpFailure)
 }
 
+const onSignIn = (event) => {
+  event.preventDefault()
+
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
+}
+
 module.exports = {
-  onSignUp
+  onSignUp,
+  onSignIn
 }

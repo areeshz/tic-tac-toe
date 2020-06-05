@@ -1,5 +1,6 @@
+# API='https://tic-tac-toe-wdi-production.herokuapp.com'
 API='https://tic-tac-toe-wdi.herokuapp.com'
-URL_PATH='/sign-up'
+URL_PATH='/sign-in'
 
 curl "${API}${URL_PATH}" \
   --include \
@@ -8,8 +9,7 @@ curl "${API}${URL_PATH}" \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",
-      "password": "'"${PW}"'",
-      "password_confirmation": "'"${PW}"'"
+      "password": "'"${PW}"'"
     }
   }'
 

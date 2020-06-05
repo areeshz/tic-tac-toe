@@ -14,13 +14,22 @@
     <body>
       <h1>Browser Template --> Start creating Tic Tac Toe!!!</h1>
 
-      <section id="sign-up-section">
+      <section id="sign-up-section" class="auth-form">
         <h3>Sign Up!</h3>
         <form id="sign-up-form">
           <input type="email" required placeholder="Email" name="credentials[email]">
           <input type="password" required placeholder="Password" name="credentials[password]">
           <input type="password" required placeholder="Confirm Password" name="credentials[password_confirmation]">
           <button type="submit">Sign Up</button>
+        </form>
+      </section>
+
+      <section id="sign-in-section" class="auth-form">
+        <h3>Sign In!</h3>
+        <form id="sign-in-form">
+          <input type="email" required placeholder="Email" name="credentials[email]">
+          <input type="password" required placeholder="Password" name="credentials[password]">
+          <button type="submit">Sign In</button>
         </form>
       </section>
       <p id="message"></p>
