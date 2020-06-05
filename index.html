@@ -15,7 +15,7 @@
       <h1>Browser Template --> Start creating Tic Tac Toe!!!</h1>
 
       <section id="sign-up-section" class="auth-form">
-        <h3>Sign Up!</h3>
+        <h2>Sign Up</h2>
         <form id="sign-up-form">
           <input type="email" required placeholder="Email" name="credentials[email]">
           <input type="password" required placeholder="Password" name="credentials[password]">
@@ -25,11 +25,20 @@
       </section>
 
       <section id="sign-in-section" class="auth-form">
-        <h3>Sign In!</h3>
+        <h2>Sign In</h2>
         <form id="sign-in-form">
           <input type="email" required placeholder="Email" name="credentials[email]">
           <input type="password" required placeholder="Password" name="credentials[password]">
           <button type="submit">Sign In</button>
+        </form>
+      </section>
+
+      <section id="change-pw-section" class="auth-form">
+        <h2>Change Password</h2>
+        <form id="change-pw-form">
+          <input type="password" required placeholder="Old Password" name="passwords[old]">
+          <input type="password" required placeholder="New Password" name="passwords[new]">
+          <button type="submit">Change Password</button>
         </form>
       </section>
       <p id="message"></p>

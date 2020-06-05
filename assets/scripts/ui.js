@@ -23,9 +23,21 @@ const signInFailure = () => {
   $('#message').text('Sign In Failure. Either the Email or Password is incorrect.').show().removeClass().addClass('failure')
 }
 
+const changePWSuccess = () => {
+  $('form').trigger('reset')
+  $('#message').text('Password Changed Successfully').show().removeClass().addClass('success')
+}
+
+const changePWFailure = () => {
+  $('form').trigger('reset')
+  $('#message').text('Password Change Unsuccessful').show().removeClass().addClass('failure')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePWSuccess,
+  changePWFailure
 }

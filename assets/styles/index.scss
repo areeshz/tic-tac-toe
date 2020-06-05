@@ -10,4 +10,16 @@
 
 .auth-form {
   margin: 25px;
+  input {
+    display: block;
+    margin-bottom: 0.2rem;
+    width: 175px;
+  }
+  button {
+    margin-top: 10px;
+    width: 175px;
+  }
+  h2 {
+    font-size: 20px;
+  }
 }
