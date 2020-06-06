@@ -2,24 +2,45 @@
 
 .success {
   color: green;
+  text-align: center;
 }
 
 .failure {
   color: red;
+  text-align: center;
 }
 
 .auth-form {
-  margin: 25px;
+  margin: 100px auto;
+  width: 40%;
+  text-align: center;
   input {
     display: block;
-    margin-bottom: 0.2rem;
+    margin: auto;
+    margin-bottom: .7rem;
     width: 175px;
   }
   button {
-    margin-top: 10px;
+    margin: 10px auto;
     width: 175px;
   }
   h2 {
     font-size: 20px;
   }
+}
+
+.board {
+  margin: 25px auto;
+  width: 50%;
+}
+
+.game-box {
+  background-color: gray;
+  border: 1px solid black;
+  height: 150px;
+  width: 150px;
+}
+
+.hidden {
+  display: none;
 }

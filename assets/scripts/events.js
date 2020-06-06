@@ -37,8 +37,24 @@ const onChangePW = (event) => {
     .catch(ui.changePWFailure)
 }
 
+const toSignUp = (event) => {
+  event.preventDefault()
+
+  $('#sign-in-section').addClass('hidden')
+  $('#sign-up-section').removeClass('hidden')
+}
+
+const toSignIn = (event) => {
+  event.preventDefault()
+
+  $('#sign-up-section').addClass('hidden')
+  $('#sign-in-section').removeClass('hidden')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onChangePW
+  onChangePW,
+  toSignUp,
+  toSignIn
 }

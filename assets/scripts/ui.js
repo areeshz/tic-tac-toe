@@ -13,9 +13,12 @@ const signUpFailure = () => {
 
 const signInSuccess = (responseData) => {
   $('form').trigger('reset')
-  $('#message').text(`Sign In Successful! Welcome ${responseData.user.email}`).show().removeClass().addClass('success')
+  $('#message').text(`Sign In Successful! Welcome ${responseData.user.email}`).show(400).removeClass().addClass('success')
 
   store.user = responseData.user
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const signInFailure = () => {

@@ -14,7 +14,7 @@
     <body>
       <h1>Browser Template --> Start creating Tic Tac Toe!!!</h1>
 
-      <section id="sign-up-section" class="auth-form">
+      <section id="sign-up-section" class="auth-form hidden">
         <h2>Sign Up</h2>
         <form id="sign-up-form">
           <input type="email" required placeholder="Email" name="credentials[email]">
@@ -22,6 +22,7 @@
           <input type="password" required placeholder="Confirm Password" name="credentials[password_confirmation]">
           <button type="submit">Sign Up</button>
         </form>
+        <a href="./" id="toSignIn">Sign In</a>
       </section>
 
       <section id="sign-in-section" class="auth-form">
@@ -31,9 +32,10 @@
           <input type="password" required placeholder="Password" name="credentials[password]">
           <button type="submit">Sign In</button>
         </form>
+        <a href="./" id="toSignUp">Sign Up</a>
       </section>
 
-      <section id="change-pw-section" class="auth-form">
+      <section id="change-pw-section" class="auth-form hidden">
         <h2>Change Password</h2>
         <form id="change-pw-form">
           <input type="password" required placeholder="Old Password" name="passwords[old]">
@@ -41,6 +43,22 @@
           <button type="submit">Change Password</button>
         </form>
       </section>
-      <p id="message"></p>
+
+      <section id="game-board-section" class="board">
+        <div class="container">
+          <div class="row">
+            <div class="col-4 game-box"></div>
+            <div class="col-4 game-box"></div>
+            <div class="col-4 game-box"></div>
+            <div class="col-4 game-box"></div>
+            <div class="col-4 game-box"></div>
+            <div class="col-4 game-box"></div>
+            <div class="col-4 game-box"></div>
+            <div class="col-4 game-box"></div>
+            <div class="col-4 game-box"></div>
+          </div>
+        </div>
+      </section>
+      <p id="message" class="hidden"></p>
     </body>
 </html>
