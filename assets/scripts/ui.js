@@ -19,6 +19,11 @@ const signInSuccess = (responseData) => {
   setTimeout(() => {
     $('#message').hide(250)
   }, 2500)
+
+  $('#sign-in-section').addClass('hidden')
+  $('#sign-out-button').removeClass('hidden')
+  $('#change-pw-section').removeClass('hidden')
+  $('#game-board-section').removeClass('hidden')
 }
 
 const signInFailure = () => {
@@ -37,11 +42,26 @@ const changePWFailure = () => {
 }
 
 const signOutSuccess = () => {
-  $('#message').text('Signed Out').show().removeClass().addClass('success')
+  $('#message').text('Signed Out').show(400).removeClass().addClass('success')
+  $('#sign-out-button').addClass('hidden')
+  $('#change-pw-section').addClass('hidden')
+  $('#sign-in-section').removeClass('hidden')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const signOutFailure = () => {
   $('#message').text('Sign Out Unsuccessful').show().removeClass().addClass('failure')
+}
+
+const updateGameBoard = (block) => {
+  const imgSource = store.player1Move ? 'assets/game-pieces/x.png' : 'assets/game-pieces/circle.png'
+  const imgHtml = `<img class="block-image" src="${imgSource}" alt="">`
+  $(block).html(imgHtml)
+  console.log(store.player1Move) // remove once function is finished
+  store.player1Move = !store.player1Move // move this to game logic once initiated. Change move status after API call
 }
 
 module.exports = {
@@ -52,5 +72,6 @@ module.exports = {
   changePWSuccess,
   changePWFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  updateGameBoard
 }

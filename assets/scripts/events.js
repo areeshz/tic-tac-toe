@@ -4,6 +4,21 @@ const getFormFields = require('./../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+// Remove quick sign in for production version
+const quickIn = () => {
+  const data = {
+    credentials: {
+      email: 'quick@aol.com',
+      password: '123',
+      confirm_password: 123
+    }
+  }
+
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
+}
+
 const onSignUp = (event) => {
   event.preventDefault()
 
@@ -59,11 +74,21 @@ const toSignIn = (event) => {
   $('#sign-in-section').removeClass('hidden')
 }
 
+const onBlockSelect = (event) => {
+  const block = event.target
+  ui.updateGameBoard(block)
+
+  $(block).off('click')
+  // const index = parseInt(block.id.slice(-1)) // either move to game logic or pass into game logic function
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePW,
   toSignUp,
   toSignIn,
-  onSignOut
+  onSignOut,
+  quickIn,
+  onBlockSelect
 }

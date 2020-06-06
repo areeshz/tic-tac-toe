@@ -26,7 +26,7 @@
       </section>
 
       <section id="sign-in-section" class="auth-form">
-        <h2>Sign In</h2>
+        <h2 id="quick-in" style="color: red">Sign In - Remove Quick In</h2>
         <form id="sign-in-form">
           <input type="email" required placeholder="Email" name="credentials[email]">
           <input type="password" required placeholder="Password" name="credentials[password]">
@@ -35,36 +35,37 @@
         <a href="./" id="toSignUp">Sign Up</a>
       </section>
 
-      <section id="change-pw-section" class="auth-form">
+      <section id="change-pw-section" class="auth-form hidden">
         <h2>Change Password</h2>
         <form id="change-pw-form">
           <input type="password" required placeholder="Old Password" name="passwords[old]">
           <input type="password" required placeholder="New Password" name="passwords[new]">
           <button type="submit">Change Password</button>
         </form>
-        <a href="./" id="sign-out-button">Sign Out</a>
+
       </section>
       <p id="message" class="hidden"></p>
 
       <section id="game-board-section" class="board hidden">
         <div class="container">
           <div class="row flex-nowrap">
-            <div class="col-4 game-box"></div>
-            <div class="col-4 game-box"></div>
-            <div class="col-4 game-box"></div>
+            <div id="block-0" class="col-4 game-box"></div>
+            <div id="block-1" class="col-4 game-box"></div>
+            <div id="block-2" class="col-4 game-box"></div>
           </div>
           <div class="row flex-nowrap">
-            <div class="col-4 game-box"></div>
-            <div class="col-4 game-box"></div>
-            <div class="col-4 game-box"></div>
+            <div id="block-3" class="col-4 game-box"></div>
+            <div id="block-4" class="col-4 game-box"></div>
+            <div id="block-5" class="col-4 game-box"></div>
           </div>
           <div class="row flex-nowrap">
-            <div class="col-4 game-box"></div>
-            <div class="col-4 game-box"></div>
-            <div class="col-4 game-box"></div>
+            <div id="block-6" class="col-4 game-box"></div>
+            <div id="block-7" class="col-4 game-box"></div>
+            <div id="block-8" class="col-4 game-box"></div>
           </div>
         </div>
       </section>
 
+      <a href="./" id="sign-out-button" class="hidden">Sign Out</a>
     </body>
 </html>

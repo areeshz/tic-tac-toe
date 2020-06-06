@@ -1,7 +1,8 @@
 'use strict'
 
 const store = {
-  user: {}
+  user: {},
+  player1Move: true
 }
 
 module.exports = store
