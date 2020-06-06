@@ -35,16 +35,18 @@
         <a href="./" id="toSignUp">Sign Up</a>
       </section>
 
-      <section id="change-pw-section" class="auth-form hidden">
+      <section id="change-pw-section" class="auth-form">
         <h2>Change Password</h2>
         <form id="change-pw-form">
           <input type="password" required placeholder="Old Password" name="passwords[old]">
           <input type="password" required placeholder="New Password" name="passwords[new]">
           <button type="submit">Change Password</button>
         </form>
+        <a href="./" id="sign-out-button">Sign Out</a>
       </section>
+      <p id="message" class="hidden"></p>
 
-      <section id="game-board-section" class="board">
+      <section id="game-board-section" class="board hidden">
         <div class="container">
           <div class="row flex-nowrap">
             <div class="col-4 game-box"></div>
@@ -63,6 +65,6 @@
           </div>
         </div>
       </section>
-      <p id="message" class="hidden"></p>
+
     </body>
 </html>

@@ -36,11 +36,21 @@ const changePWFailure = () => {
   $('#message').text('Password Change Unsuccessful').show().removeClass().addClass('failure')
 }
 
+const signOutSuccess = () => {
+  $('#message').text('Signed Out').show().removeClass().addClass('success')
+}
+
+const signOutFailure = () => {
+  $('#message').text('Sign Out Unsuccessful').show().removeClass().addClass('failure')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   changePWSuccess,
-  changePWFailure
+  changePWFailure,
+  signOutSuccess,
+  signOutFailure
 }
