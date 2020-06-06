@@ -34,11 +34,15 @@
   width: 50%;
 }
 
+.row {
+  display: flex;
+}
+
 .game-box {
   background-color: gray;
   border: 1px solid black;
   height: 150px;
-  width: 150px;
+  // width: 150px;
 }
 
 .hidden {
