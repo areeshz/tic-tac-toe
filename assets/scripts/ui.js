@@ -3,12 +3,20 @@ const store = require('./store.js')
 
 const signUpSuccess = (responseData) => {
   $('form').trigger('reset')
-  $('#message').text(`Sign Up Successful! Welcome ${responseData.user.email}.`).show().removeClass().addClass('success')
+  $('#message').text(`Sign Up Successful! Welcome ${responseData.user.email}.`).show(400).removeClass().addClass('success')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const signUpFailure = () => {
   $('form').trigger('reset')
-  $('#message').text('Sign Up Failure! Please check for something wrong.').show().removeClass().addClass('failure')
+  $('#message').text('Sign Up Failure! Please check for something wrong.').show(400).removeClass().addClass('failure')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const signInSuccess = (responseData) => {
@@ -22,29 +30,45 @@ const signInSuccess = (responseData) => {
 
   $('#sign-in-section').addClass('hidden')
   $('#sign-out-button').removeClass('hidden')
-  $('#change-pw-section').removeClass('hidden')
+  $('#change-pw-button').removeClass('hidden')
   $('#game-board-section').removeClass('hidden')
 }
 
 const signInFailure = () => {
   $('form').trigger('reset')
-  $('#message').text('Sign In Failure. Either the Email or Password is incorrect.').show().removeClass().addClass('failure')
+  $('#message').text('Sign In Failure. Either the Email or Password is incorrect.').show(400).removeClass().addClass('failure')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const changePWSuccess = () => {
   $('form').trigger('reset')
-  $('#message').text('Password Changed Successfully').show().removeClass().addClass('success')
+  $('#change-pw-section').addClass('hidden')
+  $('#message').text('Password Changed Successfully').show(400).removeClass().addClass('success')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const changePWFailure = () => {
   $('form').trigger('reset')
-  $('#message').text('Password Change Unsuccessful').show().removeClass().addClass('failure')
+  $('#change-pw-section').addClass('hidden')
+  $('#message').text('Password Change Unsuccessful').show(400).removeClass().addClass('failure')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const signOutSuccess = () => {
   $('#message').text('Signed Out').show(400).removeClass().addClass('success')
   $('#sign-out-button').addClass('hidden')
   $('#change-pw-section').addClass('hidden')
+  $('#game-board-section').addClass('hidden')
+  $('#change-pw-button').addClass('hidden')
   $('#sign-in-section').removeClass('hidden')
 
   setTimeout(() => {
@@ -53,7 +77,11 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
-  $('#message').text('Sign Out Unsuccessful').show().removeClass().addClass('failure')
+  $('#message').text('Sign Out Unsuccessful').show(400).removeClass().addClass('failure')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const updateGameBoard = (block) => {

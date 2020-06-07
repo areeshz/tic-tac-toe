@@ -12,6 +12,24 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <nav>
+        <div class="container nav-container">
+          <div class="row">
+            <div class="col-3 nav-bar">
+              <p>L</p>
+            </div>
+            <div class="col-6 nav-bar">
+              <p id="message" class="hidden"></p>
+            </div>
+            <div class="col-3 nav-bar">
+              <p>R</p>
+              <a href="./" id="sign-out-button" class="hidden">Sign Out</a>
+              <a href="./" id="change-pw-button" class="hidden">Change Password</a>
+            </div>
+          </div>
+        </div>
+
+      </nav>
       <h1>Browser Template --> Start creating Tic Tac Toe!!!</h1>
 
       <section id="sign-up-section" class="auth-form hidden">
@@ -44,7 +62,6 @@
         </form>
 
       </section>
-      <p id="message" class="hidden"></p>
 
       <section id="game-board-section" class="board hidden">
         <div class="container">
@@ -66,6 +83,5 @@
         </div>
       </section>
 
-      <a href="./" id="sign-out-button" class="hidden">Sign Out</a>
     </body>
 </html>

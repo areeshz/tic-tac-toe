@@ -74,6 +74,12 @@ const toSignIn = (event) => {
   $('#sign-in-section').removeClass('hidden')
 }
 
+const toChangePW = (event) => {
+  event.preventDefault()
+
+  $('#change-pw-section').removeClass('hidden')
+}
+
 const onBlockSelect = (event) => {
   const block = event.target
   ui.updateGameBoard(block)
@@ -90,5 +96,6 @@ module.exports = {
   toSignIn,
   onSignOut,
   quickIn,
-  onBlockSelect
+  onBlockSelect,
+  toChangePW
 }

@@ -1,5 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
 
+nav {
+  background-color: rgba(190, 190, 190, 1);
+  p, a {
+    font-size: 30px;
+    display: inline;
+    padding: 5px;
+  }
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.nav-bar {
+  height: 60px;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+}
+
 .success {
   color: green;
   text-align: center;
@@ -30,7 +51,7 @@
 }
 
 .board {
-  margin: 25px auto;
+  margin: 175px auto;
   width: 50%;
 }
 

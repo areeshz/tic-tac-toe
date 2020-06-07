@@ -14,6 +14,7 @@ $(() => {
   $('#sign-in-form').on('submit', events.onSignIn)
   $('#change-pw-form').on('submit', events.onChangePW)
   $('#sign-out-button').on('click', events.onSignOut)
+  $('#change-pw-button').on('click', events.toChangePW)
   $('#toSignUp').on('click', events.toSignUp)
   $('#toSignIn').on('click', events.toSignIn)
   $('#block-0, #block-1, #block-2, #block-3, #block-4, #block-5, #block-6, #block-7, #block-8').on('click', events.onBlockSelect)
