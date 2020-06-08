@@ -1,9 +1,8 @@
 'use strict'
 
-const getFormFields = require('./../../lib/get-form-fields.js')
+const getFormFields = require('./../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const gameLogic = require('./game-logic.js')
 
 // Remove quick sign in for production version
 const quickIn = () => {
@@ -81,31 +80,6 @@ const toChangePW = (event) => {
   $('#change-pw-section').removeClass('hidden')
 }
 
-const newGame = (event) => {
-  // Hide home page section
-  $('#home-page').addClass('hidden')
-
-  // MODULARIZE CODE IF TIME
-
-  // Show game board and ensure all spaces are clear / empty
-  $('.game-box').html('')
-  $('#game-board-section').removeClass('hidden')
-
-  // Reset all local game storage
-}
-
-const onBlockSelect = (event) => {
-  const block = event.target
-  ui.updateGameBoard(block)
-
-  $(block).off('click')
-  const index = parseInt(block.id.slice(-1)) // either move to game logic or pass into game logic function
-  // Add api call below
-
-  // Add game logic below
-  gameLogic.checkForWinner(index)
-}
-
 module.exports = {
   onSignUp,
   onSignIn,
@@ -114,7 +88,5 @@ module.exports = {
   toSignIn,
   onSignOut,
   quickIn,
-  onBlockSelect,
-  toChangePW,
-  newGame
+  toChangePW
 }

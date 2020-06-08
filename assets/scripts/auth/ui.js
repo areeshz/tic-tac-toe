@@ -1,5 +1,5 @@
 'use strict'
-const store = require('./store.js')
+const store = require('./../store.js')
 
 const signUpSuccess = (responseData) => {
   $('form').trigger('reset')
@@ -85,13 +85,6 @@ const signOutFailure = () => {
   }, 2500)
 }
 
-const updateGameBoard = (block) => {
-  const imgSource = store.game.player1Move ? 'assets/game-pieces/x.png' : 'assets/game-pieces/circle.png'
-  const imgHtml = `<img class="block-image" src="${imgSource}" alt="">`
-  $(block).html(imgHtml)
-  console.log(store.game.player1Move) // remove once function is finished
-}
-
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -100,6 +93,5 @@ module.exports = {
   changePWSuccess,
   changePWFailure,
   signOutSuccess,
-  signOutFailure,
-  updateGameBoard
+  signOutFailure
 }
