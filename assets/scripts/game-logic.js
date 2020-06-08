@@ -40,9 +40,16 @@ const checkForWinner = (index) => {
     // Check if second diagonal contains winner
     console.log(`${store.game.cells[2]} wins, diag 2!`)
     console.log(store.game.cells)
+  } else if (store.game.cells.every(cell => cell !== '')) {
+    console.log("it's a tie!")
   }
 }
 
+const setNewGame = () => {
+
+}
+
 module.exports = {
-  checkForWinner
+  checkForWinner,
+  setNewGame
 }

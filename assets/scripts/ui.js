@@ -31,7 +31,8 @@ const signInSuccess = (responseData) => {
   $('#sign-in-section').addClass('hidden')
   $('#sign-out-button').removeClass('hidden')
   $('#change-pw-button').removeClass('hidden')
-  $('#game-board-section').removeClass('hidden')
+  $('#home-page').removeClass('hidden')
+  // $('#game-board-section').removeClass('hidden') // Move this to when the new game button is clicked on home page
 }
 
 const signInFailure = () => {

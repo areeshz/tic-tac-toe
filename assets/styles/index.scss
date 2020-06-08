@@ -37,9 +37,15 @@ h1 {
 }
 
 .auth-form {
-  margin: 100px auto;
+  margin: 0 auto;
   width: 40%;
   text-align: center;
+  form {
+    margin: 100px auto;
+    a {
+      display: block;
+    }
+  }
   input {
     display: block;
     margin: auto;
@@ -52,6 +58,23 @@ h1 {
   }
   h2 {
     font-size: 20px;
+  }
+}
+
+.home {
+  h1 {
+    margin-bottom: 50px;
+  }
+  nav {
+    background-color: transparent;
+    margin: 0 auto;
+    text-align: center;
+    width: 40%;
+  }
+  button {
+    width: 50%;
+    margin: 1rem;
+    // display: block;
   }
 }
 

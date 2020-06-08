@@ -81,6 +81,19 @@ const toChangePW = (event) => {
   $('#change-pw-section').removeClass('hidden')
 }
 
+const newGame = (event) => {
+  // Hide home page section
+  $('#home-page').addClass('hidden')
+
+  // MODULARIZE CODE IF TIME
+
+  // Show game board and ensure all spaces are clear / empty
+  $('.game-box').html('')
+  $('#game-board-section').removeClass('hidden')
+
+  // Reset all local game storage
+}
+
 const onBlockSelect = (event) => {
   const block = event.target
   ui.updateGameBoard(block)
@@ -102,5 +115,6 @@ module.exports = {
   onSignOut,
   quickIn,
   onBlockSelect,
-  toChangePW
+  toChangePW,
+  newGame
 }

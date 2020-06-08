@@ -8,8 +8,8 @@
 const events = require('./events.js')
 
 $(() => {
+  // Authentication-related handlers
   $('#quick-in').on('click', events.quickIn)
-
   $('#sign-up-form').on('submit', events.onSignUp)
   $('#sign-in-form').on('submit', events.onSignIn)
   $('#change-pw-form').on('submit', events.onChangePW)
@@ -17,5 +17,8 @@ $(() => {
   $('#change-pw-button').on('click', events.toChangePW)
   $('#toSignUp').on('click', events.toSignUp)
   $('#toSignIn').on('click', events.toSignIn)
+
+  // Game/inner-app related handlers
+  $('#new-game-button').on('click', events.newGame)
   $('#block-0, #block-1, #block-2, #block-3, #block-4, #block-5, #block-6, #block-7, #block-8').on('click', events.onBlockSelect)
 })

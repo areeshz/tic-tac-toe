@@ -30,41 +30,55 @@
         </div>
 
       </nav>
-      <h1>Tic Tac Toe</h1>
 
       <section id="sign-up-section" class="auth-form hidden">
-        <h2>Sign Up</h2>
+        <h1>Tic Tac Toe</h1>
+
         <form id="sign-up-form">
+          <h2>Sign Up</h2>
           <input type="email" required placeholder="Email" name="credentials[email]">
           <input type="password" required placeholder="Password" name="credentials[password]">
           <input type="password" required placeholder="Confirm Password" name="credentials[password_confirmation]">
           <button type="submit">Sign Up</button>
+          <a href="./" id="toSignIn">Sign In</a>
         </form>
-        <a href="./" id="toSignIn">Sign In</a>
+
       </section>
 
       <section id="sign-in-section" class="auth-form">
-        <h2 id="quick-in" style="color: red">Sign In - Remove Quick In</h2>
+        <h1>Tic Tac Toe</h1>
+
         <form id="sign-in-form">
+          <h2 id="quick-in" style="color: red">Sign In - Remove Quick In</h2>
           <input type="email" required placeholder="Email" name="credentials[email]">
           <input type="password" required placeholder="Password" name="credentials[password]">
           <button type="submit">Sign In</button>
+          <a href="./" id="toSignUp">Sign Up</a>
         </form>
-        <a href="./" id="toSignUp">Sign Up</a>
+
       </section>
 
       <section id="change-pw-section" class="auth-form hidden">
-        <h2>Change Password</h2>
+
         <form id="change-pw-form">
+          <h2>Change Password</h2>
           <input type="password" required placeholder="Old Password" name="passwords[old]">
           <input type="password" required placeholder="New Password" name="passwords[new]">
           <button type="submit">Change Password</button>
         </form>
-
       </section>
 
-      <section id="game-board-section" class="board hidden">
-        <div class="container">
+      <section id="home-page" class="home hidden">
+        <h1>Home Page</h1>
+        <nav>
+          <button id="new-game-button">New Game</button>
+          <button id="stats-button">Stats</button>
+        </nav>
+      </section>
+
+      <section id="game-board-section" class="hidden">
+        <h1>Tic Tac Toe</h1>
+        <div class="container board">
           <div class="row flex-nowrap">
             <div id="block-0" class="col-4 game-box"></div>
             <div id="block-1" class="col-4 game-box"></div>
