@@ -2,7 +2,10 @@
 
 const store = {
   user: {},
-  player1Move: true
+  game: {
+    player1Move: true,
+    cells: ['', '', '', '', '', '', '', '', '']
+  }
 }
 
 module.exports = store

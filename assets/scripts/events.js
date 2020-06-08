@@ -3,6 +3,7 @@
 const getFormFields = require('./../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const gameLogic = require('./game-logic.js')
 
 // Remove quick sign in for production version
 const quickIn = () => {
@@ -85,7 +86,11 @@ const onBlockSelect = (event) => {
   ui.updateGameBoard(block)
 
   $(block).off('click')
-  // const index = parseInt(block.id.slice(-1)) // either move to game logic or pass into game logic function
+  const index = parseInt(block.id.slice(-1)) // either move to game logic or pass into game logic function
+  // Add api call below
+
+  // Add game logic below
+  gameLogic.checkForWinner(index)
 }
 
 module.exports = {

@@ -85,11 +85,10 @@ const signOutFailure = () => {
 }
 
 const updateGameBoard = (block) => {
-  const imgSource = store.player1Move ? 'assets/game-pieces/x.png' : 'assets/game-pieces/circle.png'
+  const imgSource = store.game.player1Move ? 'assets/game-pieces/x.png' : 'assets/game-pieces/circle.png'
   const imgHtml = `<img class="block-image" src="${imgSource}" alt="">`
   $(block).html(imgHtml)
-  console.log(store.player1Move) // remove once function is finished
-  store.player1Move = !store.player1Move // move this to game logic once initiated. Change move status after API call
+  console.log(store.game.player1Move) // remove once function is finished
 }
 
 module.exports = {
