@@ -5,7 +5,7 @@ nav {
   p, a {
     font-size: 18px;
     display: inline;
-    padding: 5px;
+    margin: 5px;
   }
 }
 
@@ -20,7 +20,7 @@ h1 {
 }
 
 .nav-bar {
-  height: 35px;
+  min-height: 40px;
   // display: flex;
   // flex-direction: row;
   // justify-content: center;

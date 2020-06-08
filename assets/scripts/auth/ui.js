@@ -69,6 +69,7 @@ const signOutSuccess = () => {
   $('#sign-out-button').addClass('hidden')
   $('#change-pw-section').addClass('hidden')
   $('#game-board-section').addClass('hidden')
+  $('#home-page').addClass('hidden')
   $('#change-pw-button').addClass('hidden')
   $('#sign-in-section').removeClass('hidden')
 

@@ -15,10 +15,42 @@ const updateGameBoard = (block) => {
   const imgSource = store.game.player1Move ? 'assets/game-pieces/x.png' : 'assets/game-pieces/circle.png'
   const imgHtml = `<img class="block-image" src="${imgSource}" alt="">`
   $(block).html(imgHtml)
-  console.log(store.game.player1Move) // remove once function is finished
+  console.log(store.game.player1Move) // **remove once function is finished
+}
+
+const newGameSuccess = (responseData) => {
+  $('#message').text(`New Game`).show(400).removeClass().addClass('success')
+  console.log('responseData is \n', responseData)
+  // store.game.over = false
+  store.game.id = responseData.game._id
+  console.log('store is \n', store)
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 1500)
+}
+
+const newGameFailure = () => {
+  $('#message').text(`New Game Failed!`).show(400).removeClass().addClass('failure')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
+}
+
+const updateGameSuccess = (responseData) => {
+  console.log('game updated successfully')
+  console.log(responseData)
+}
+
+const updateGameFailure = () => {
+  console.log(`game update FAILED`)
 }
 
 module.exports = {
   renderNewGame,
-  updateGameBoard
+  updateGameBoard,
+  newGameSuccess,
+  newGameFailure,
+  updateGameSuccess,
+  updateGameFailure
 }
