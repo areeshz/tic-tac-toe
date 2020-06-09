@@ -10,7 +10,7 @@ const quickIn = () => {
     credentials: {
       email: 'quick@aol.com',
       password: '123',
-      confirm_password: 123
+      confirm_password: '123'
     }
   }
 
@@ -35,6 +35,7 @@ const onSignIn = (event) => {
 
   const form = event.target
   const data = getFormFields(form)
+  console.log(data)
 
   api.signIn(data)
     .then(ui.signInSuccess)

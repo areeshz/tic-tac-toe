@@ -36,6 +36,11 @@ h1 {
   text-align: center;
 }
 
+.neutral {
+  color: orange;
+  text-align: center;
+}
+
 .auth-form {
   margin: 0 auto;
   width: 40%;
@@ -85,6 +90,18 @@ h1 {
 
 .row {
   display: flex;
+}
+
+.game {
+  button {
+    display: block;
+    margin: 10px auto;
+    height: 50px;
+    width: 100px;
+  }
+  h2 {
+    text-align: center;
+  }
 }
 
 .game-box {

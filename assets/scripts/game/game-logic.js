@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./../store.js')
+const events = require('./events.js')
 
 const checkForWinner = (index) => {
   // IDEA - make a nested array of indices of the possible winning combinations, iterate through each nested array, use those indices to check the cells in the game board for a winner. If a winner is identified, record that info, disable the board, do other necessary things, and break the loop. Could use an "any" or "some" iterator possibly
@@ -10,7 +11,7 @@ const checkForWinner = (index) => {
   // Update local store with latest game move
   store.game.cells[index] = store.game.player1Move ? 'x' : 'o'
   const cells = store.game.cells
-  let winnerFound
+  let winnerFound = false
   let winner
 
   // Check for any winning combos
@@ -30,21 +31,30 @@ const checkForWinner = (index) => {
   if (!winnerFound && cells.every(cell => cell !== '')) {
     winnerFound = true
     winner = 'tie'
+    console.log(`winner is ${winner}`)
   }
 
   if (winnerFound) {
     switch (winner) {
       case 'x':
-        console.log(`X is the winner!`)
+        $('#results-message').text(`X is the winner!`).addClass('success')
         break
       case 'o':
-        console.log(`O is the winner!`)
+        $('#results-message').text(`O is the winner!`).addClass('failure')
         break
       case 'tie':
-        console.log(`oof, it's a tie!`)
+        $('#results-message').text(`oof, it's a tie!`).addClass('neutral')
     }
+
+    // Prevent any additional moves from being made on the board
+    $('.game-box').off('click', events.onBlockSelect)
+    $('#play-again').on('click', events.onNewGame)
   }
 
+  return winnerFound
+}
+
+const switchTurn = () => {
   store.game.player1Move = !store.game.player1Move // Switch turn to next user
 }
 
@@ -57,5 +67,6 @@ const setNewGame = () => {
 
 module.exports = {
   checkForWinner,
-  setNewGame
+  setNewGame,
+  switchTurn
 }
