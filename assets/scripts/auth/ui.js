@@ -47,6 +47,7 @@ const signInFailure = () => {
 const changePWSuccess = () => {
   $('form').trigger('reset')
   $('#change-pw-section').addClass('hidden')
+  $('#home-page').removeClass('hidden')
   $('#message').text('Password Changed Successfully').show(400).removeClass().addClass('success')
 
   setTimeout(() => {
@@ -66,11 +67,16 @@ const changePWFailure = () => {
 
 const signOutSuccess = () => {
   $('#message').text('Signed Out').show(400).removeClass().addClass('success')
+  // Remove buttons from the nav bar
   $('#sign-out-button').addClass('hidden')
-  $('#change-pw-section').addClass('hidden')
-  $('#game-board-section').addClass('hidden')
-  $('#home-page').addClass('hidden')
   $('#change-pw-button').addClass('hidden')
+
+  // Hide all other pages and show sign-in page
+  // $('#game-board-section').addClass('hidden')
+  // $('#home-page').addClass('hidden')
+  // $('#change-pw-section').addClass('hidden')
+  // $('#sign-in-section').removeClass('hidden')
+  $('.page').addClass('hidden')
   $('#sign-in-section').removeClass('hidden')
 
   setTimeout(() => {

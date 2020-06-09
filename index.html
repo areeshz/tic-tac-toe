@@ -31,7 +31,7 @@
 
       </nav>
 
-      <section id="sign-up-section" class="auth-form hidden">
+      <section id="sign-up-section" class="auth-form hidden page">
         <h1>Tic Tac Toe</h1>
 
         <form id="sign-up-form">
@@ -45,7 +45,7 @@
 
       </section>
 
-      <section id="sign-in-section" class="auth-form">
+      <section id="sign-in-section" class="auth-form page">
         <h1>Tic Tac Toe</h1>
 
         <form id="sign-in-form">
@@ -58,17 +58,17 @@
 
       </section>
 
-      <section id="change-pw-section" class="auth-form hidden">
-
+      <section id="change-pw-section" class="auth-form hidden page">
         <form id="change-pw-form">
           <h2>Change Password</h2>
           <input type="password" required placeholder="Old Password" name="passwords[old]">
           <input type="password" required placeholder="New Password" name="passwords[new]">
           <button type="submit">Change Password</button>
         </form>
+        <button class="to-home">Back to Home</button>
       </section>
 
-      <section id="home-page" class="home hidden">
+      <section id="home-page" class="home hidden page">
         <h1>Home Page</h1>
         <nav>
           <button id="new-game-button">New Game</button>
@@ -76,7 +76,7 @@
         </nav>
       </section>
 
-      <section id="game-board-section" class="hidden game">
+      <section id="game-board-section" class="hidden game page">
         <h1>Tic Tac Toe</h1>
         <div id="play-again-div" class="hidden">
           <h2 id="results-message"></h2>
@@ -99,6 +99,15 @@
             <div id="block-8" class="col-4 game-box"></div>
           </div>
         </div>
+        <button class="to-home">Back to Home</button>
+      </section>
+
+      <section id="stats-section" class="stats hidden page">
+        <h1>Statistics</h1>
+        <article id="stats-list">
+
+        </article>
+        <button class="to-home">Back to Home</button>
       </section>
 
     </body>

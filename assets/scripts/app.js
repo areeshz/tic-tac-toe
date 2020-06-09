@@ -21,5 +21,7 @@ $(() => {
 
   // Game/inner-app related handlers
   $('#new-game-button').on('click', gameEvents.onNewGame)
+  $('#stats-button').on('click', gameEvents.onStatsPage)
+  $('.to-home').on('click', gameEvents.toHome)
   // $('#block-0, #block-1, #block-2, #block-3, #block-4, #block-5, #block-6, #block-7, #block-8').on('click', gameEvents.onBlockSelect)
 })

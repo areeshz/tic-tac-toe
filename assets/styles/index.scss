@@ -83,6 +83,24 @@ h1 {
   }
 }
 
+.stats {
+  width: 40%;
+  margin: 0 auto;
+
+  article {
+    margin: 50px auto;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 .board {
   margin: 25px auto;
   width: 50%;
@@ -97,7 +115,7 @@ h1 {
     display: block;
     margin: 10px auto;
     height: 50px;
-    width: 100px;
+    width: 125px;
   }
   h2 {
     text-align: center;

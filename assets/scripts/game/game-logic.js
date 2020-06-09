@@ -37,18 +37,17 @@ const checkForWinner = (index) => {
   if (winnerFound) {
     switch (winner) {
       case 'x':
-        $('#results-message').text(`X is the winner!`).addClass('success')
+        $('#results-message').text(`X is the winner!`).removeClass().addClass('success')
         break
       case 'o':
-        $('#results-message').text(`O is the winner!`).addClass('failure')
+        $('#results-message').text(`O is the winner!`).removeClass().addClass('failure')
         break
       case 'tie':
-        $('#results-message').text(`oof, it's a tie!`).addClass('neutral')
+        $('#results-message').text(`oof, it's a tie!`).removeClass().addClass('neutral')
     }
 
     // Prevent any additional moves from being made on the board
     $('.game-box').off('click', events.onBlockSelect)
-    $('#play-again').on('click', events.onNewGame)
   }
 
   return winnerFound
@@ -65,8 +64,53 @@ const setNewGame = () => {
   }
 }
 
+// Function that takes in a completed game from the API and returns the user's win/loss status
+const determineWinner = (game) => {
+  const combos = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
+  ]
+  const cells = game.cells
+  let winnerFound = false
+  let winner
+  for (let i = 0; i < combos.length; i++) {
+    const combo = combos[i]
+    if (combo.every(index => cells[index] !== '')) {
+      if (cells[combo[0]] === cells[combo[1]] && cells[combo[1]] === cells[combo[2]]) {
+        winnerFound = true
+        winner = cells[combo[0]] === 'x' ? 'win' : 'loss'
+        break
+      }
+    }
+  }
+
+  if (!winnerFound && cells.every(cell => cell !== '')) {
+    winnerFound = true
+    winner = 'tie'
+  }
+
+  if (winner === undefined) {
+    console.log('Winner undefined, cells are: \n', cells)
+  }
+  return winner
+}
+
+const countWins = (games) => {
+  store.stats = {
+    win: 0,
+    loss: 0,
+    tie: 0,
+    undefined: 0
+  }
+  games.forEach((game) => {
+    const winner = determineWinner(game)
+    store.stats[winner] += 1
+  })
+}
+
 module.exports = {
   checkForWinner,
   setNewGame,
-  switchTurn
+  switchTurn,
+  determineWinner,
+  countWins
 }

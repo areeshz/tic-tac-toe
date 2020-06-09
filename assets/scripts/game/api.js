@@ -51,8 +51,20 @@ const finishGame = () => {
   })
 }
 
+const getGames = (over) => {
+  over = over === undefined ? '' : '?over=' + over
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games' + over,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createGame,
   updateGame,
-  finishGame
+  finishGame,
+  getGames
 }

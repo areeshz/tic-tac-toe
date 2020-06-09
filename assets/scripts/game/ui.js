@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./../store.js')
+const gameLogic = require('./game-logic.js')
 
 const renderNewGame = () => {
   // Hide home page section
@@ -15,7 +16,7 @@ const updateGameBoard = (block) => {
   const imgSource = store.game.player1Move ? 'assets/game-pieces/x.png' : 'assets/game-pieces/circle.png'
   const imgHtml = `<img class="block-image" src="${imgSource}" alt="">`
   $(block).html(imgHtml)
-  console.log(store.game.player1Move) // **remove once function is finished
+  console.log(`x's move? `, store.game.player1Move) // **remove once function is finished
 }
 
 const newGameSuccess = (responseData) => {
@@ -46,11 +47,35 @@ const updateGameFailure = () => {
   console.log(`game update FAILED`)
 }
 
+const getGamesSuccess = (responseData) => {
+  console.log(responseData)
+  const games = responseData.games
+  gameLogic.countWins(games)
+
+  const statsHtml = (`
+    <p>Games Completed: ${responseData.games.length}</p>
+    <p>Wins: ${store.stats.win}</p>
+    <p>Losses: ${store.stats.loss}</p>
+    <p>Ties: ${store.stats.tie}</p>
+    <p>Win/Loss Ratio: ${(store.stats.win / store.stats.loss).toFixed(2)}</p>
+    `)
+  console.log(store)
+  $('#stats-list').html(statsHtml)
+  $('#home-page').addClass('hidden')
+  $('#stats-section').removeClass('hidden')
+}
+
+const getGamesFailure = () => {
+  console.log('something went wrong')
+}
+
 module.exports = {
   renderNewGame,
   updateGameBoard,
   newGameSuccess,
   newGameFailure,
   updateGameSuccess,
-  updateGameFailure
+  updateGameFailure,
+  getGamesSuccess,
+  getGamesFailure
 }

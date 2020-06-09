@@ -78,6 +78,7 @@ const toSignIn = (event) => {
 const toChangePW = (event) => {
   event.preventDefault()
 
+  $('.page').addClass('hidden')
   $('#change-pw-section').removeClass('hidden')
 }
 
