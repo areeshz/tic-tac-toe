@@ -4,6 +4,8 @@ const store = require('./../store.js')
 const signUpSuccess = (responseData) => {
   $('form').trigger('reset')
   $('#message').text(`Sign Up Successful! Welcome ${responseData.user.email}.`).show(400).removeClass().addClass('success')
+  $('.page').addClass('hidden')
+  $('#sign-in-section').removeClass('hidden')
 
   setTimeout(() => {
     $('#message').hide(250)
@@ -12,7 +14,7 @@ const signUpSuccess = (responseData) => {
 
 const signUpFailure = () => {
   $('form').trigger('reset')
-  $('#message').text('Sign Up Failure! Please check for something wrong.').show(400).removeClass().addClass('failure')
+  $('#message').text('Sign Up Failure! Please check that your confirm password is correct.').show(400).removeClass().addClass('failure')
 
   setTimeout(() => {
     $('#message').hide(250)

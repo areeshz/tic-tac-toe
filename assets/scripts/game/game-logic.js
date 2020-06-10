@@ -55,6 +55,8 @@ const checkForWinner = (index) => {
 
 const switchTurn = () => {
   store.game.player1Move = !store.game.player1Move // Switch turn to next user
+  const text = store.game.player1Move ? "Player 1's Turn" : "Player 2's Turn"
+  $('#results-message').text(text)
 }
 
 const setNewGame = () => {

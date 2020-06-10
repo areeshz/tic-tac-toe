@@ -15,14 +15,10 @@
       <nav>
         <div class="container nav-container">
           <div class="row">
-            <div class="col-3 nav-bar">
-              <p>L</p>
-            </div>
-            <div class="col-6 nav-bar">
+            <div class="col-6 nav-bar left">
               <p id="message" class="hidden"></p>
             </div>
-            <div class="col-3 nav-bar">
-              <p>R</p>
+            <div class="col-6 nav-bar right">
               <a href="./" id="sign-out-button" class="hidden">Sign Out</a>
               <a href="./" id="change-pw-button" class="hidden">Change Password</a>
             </div>
@@ -36,10 +32,10 @@
 
         <form id="sign-up-form">
           <h2>Sign Up</h2>
-          <input type="email" required placeholder="Email" name="credentials[email]">
-          <input type="password" required placeholder="Password" name="credentials[password]">
-          <input type="password" required placeholder="Confirm Password" name="credentials[password_confirmation]">
-          <button type="submit">Sign Up</button>
+          <input class="form-control" type="email" required placeholder="Email" name="credentials[email]">
+          <input class="form-control" type="password" required placeholder="Password" name="credentials[password]">
+          <input class="form-control" type="password" required placeholder="Confirm Password" name="credentials[password_confirmation]">
+          <button type="submit" class="btn btn-success">Sign Up</button>
           <a href="./" id="toSignIn">Sign In</a>
         </form>
 
@@ -50,9 +46,9 @@
 
         <form id="sign-in-form">
           <h2 id="quick-in" style="color: red">Sign In - Remove Quick In</h2>
-          <input type="email" required placeholder="Email" name="credentials[email]">
-          <input type="password" required placeholder="Password" name="credentials[password]">
-          <button type="submit">Sign In</button>
+          <input class="form-control" type="email" required placeholder="Email" name="credentials[email]">
+          <input class="form-control" type="password" required placeholder="Password" name="credentials[password]">
+          <button type="submit" class="btn btn-success">Sign In</button>
           <a href="./" id="toSignUp">Sign Up</a>
         </form>
 
@@ -71,32 +67,35 @@
       <section id="home-page" class="home hidden page">
         <h1>Home Page</h1>
         <nav>
-          <button id="new-game-button">New Game</button>
-          <button id="stats-button">Stats</button>
+          <button id="new-game-button" class="btn btn-secondary">New Game</button>
+          <button id="stats-button" class="btn btn-secondary">Stats</button>
         </nav>
       </section>
 
       <section id="game-board-section" class="hidden game page">
         <h1>Tic Tac Toe</h1>
-        <div id="play-again-div" class="hidden">
+        <div id="results-div">
           <h2 id="results-message"></h2>
-          <button id="play-again-button">Play Again?</button>
+        </div>
+        <div id="play-again-div" class="hidden">
+          <button id="play-again-button" class="btn btn-primary">Play Again?</button>
+          <button class="to-home btn btn-primary">Back to Home</button>
         </div>
         <div class="container board">
           <div class="row flex-nowrap">
-            <div id="block-0" class="col-4 game-box"></div>
-            <div id="block-1" class="col-4 game-box"></div>
-            <div id="block-2" class="col-4 game-box"></div>
+            <div id="block-0" class="col-4 game-box left top"></div>
+            <div id="block-1" class="col-4 game-box top"></div>
+            <div id="block-2" class="col-4 game-box right top"></div>
           </div>
           <div class="row flex-nowrap">
-            <div id="block-3" class="col-4 game-box"></div>
+            <div id="block-3" class="col-4 game-box left"></div>
             <div id="block-4" class="col-4 game-box"></div>
-            <div id="block-5" class="col-4 game-box"></div>
+            <div id="block-5" class="col-4 game-box right"></div>
           </div>
           <div class="row flex-nowrap">
-            <div id="block-6" class="col-4 game-box"></div>
-            <div id="block-7" class="col-4 game-box"></div>
-            <div id="block-8" class="col-4 game-box"></div>
+            <div id="block-6" class="col-4 game-box left bottom"></div>
+            <div id="block-7" class="col-4 game-box bottom"></div>
+            <div id="block-8" class="col-4 game-box right bottom"></div>
           </div>
         </div>
         <button class="to-home">Back to Home</button>
@@ -107,7 +106,7 @@
         <article id="stats-list">
 
         </article>
-        <button class="to-home">Back to Home</button>
+        <button class="to-home btn btn-primary">Back to Home</button>
       </section>
 
     </body>

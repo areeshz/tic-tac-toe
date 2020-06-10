@@ -4,6 +4,7 @@ nav {
   background-color: rgba(190, 190, 190, 1);
   p, a {
     font-size: 18px;
+    // font-size: 100%;
     display: inline;
     margin: 5px;
   }
@@ -21,9 +22,16 @@ h1 {
 
 .nav-bar {
   min-height: 40px;
-  // display: flex;
+  display: flex;
+  align-items: center;
   // flex-direction: row;
   // justify-content: center;
+  &.right {
+    justify-content: flex-end;
+  }
+  &.left {
+    justify-content: flex-start;
+  }
 }
 
 .success {
@@ -103,7 +111,7 @@ h1 {
 
 .board {
   margin: 25px auto;
-  width: 50%;
+  width: 40%;
 }
 
 .row {
@@ -112,24 +120,36 @@ h1 {
 
 .game {
   button {
-    display: block;
+    display: inline-block;
     margin: 10px auto;
     height: 50px;
-    width: 125px;
+    // width: 125px;
   }
-  h2 {
-    text-align: center;
-  }
+  text-align: center;
 }
 
 .game-box {
-  background-color: rgba(150,150,150,0.5);
+  // background-color: rgba(150,150,150,0.5);
   border: 1px solid black;
-  height: 150px;
+  height: 140px;
   text-align: center;
   position: relative;
   // width: 150px;
+  &.left {
+    border-left: 0;
+  }
+  &.right {
+    border-right: 0;
+  }
+  &.top {
+    border-top: 0;
+  }
+  &.bottom {
+    border-bottom: 0;
+  }
 }
+
+
 
 .block-image {
   height: 75%;

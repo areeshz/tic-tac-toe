@@ -11,9 +11,10 @@ const onNewGame = (event) => {
   // Reset all local game storage
   gameLogic.setNewGame()
 
-  // Remove "play again" button if present
+  // Remove "play again" button if present, and initialize player turn message
   $('#play-again-button').off('click', onNewGame)
   $('#play-again-div').addClass('hidden')
+  $('#results-message').text("Player 1's Turn").removeClass()
 
   // De-activate any click handlers that may have been present from a previous game
   $('.game-box').off('click', onBlockSelect)
@@ -52,17 +53,17 @@ const onBlockSelect = (event) => {
 
   // If there is a winner, display winner message and add option to start new game
   if (winner) {
-    $('#play-again-div').removeClass('hidden')
+    $('#results-div').removeClass('hidden')
     $('#play-again-button').on('click', onNewGame)
+    $('#play-again-div').removeClass('hidden')
+  } else {
+    gameLogic.switchTurn() // switch turn and update turn message if the game is still ongoing
   }
 
   // PATCH request to API to update game state
   api.updateGame(index, winner)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
-
-  // Switch turn to next player
-  gameLogic.switchTurn()
 }
 
 const onPlayAgain = () => { // does this get used anywhere??????
