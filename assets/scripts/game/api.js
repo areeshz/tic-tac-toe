@@ -15,6 +15,7 @@ const createGame = () => {
 
 const updateGame = (index, over) => {
   const player = store.game.player1Move ? 'x' : 'o'
+  console.log(`about to update api, here's the move: player: ${player}, move: ${index}`)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game.id,

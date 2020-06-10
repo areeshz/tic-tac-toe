@@ -40,7 +40,7 @@ const newGameFailure = () => {
 
 const updateGameSuccess = (responseData) => {
   console.log('game updated successfully')
-  console.log(responseData)
+  console.log(`this is the responseData: `, responseData)
 }
 
 const updateGameFailure = () => {

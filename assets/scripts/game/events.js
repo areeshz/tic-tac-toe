@@ -3,6 +3,7 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const gameLogic = require('./game-logic.js')
+const store = require('./../store.js')
 
 const onNewGame = (event) => {
   // Render empty game board
@@ -51,6 +52,11 @@ const onBlockSelect = (event) => {
   const winner = gameLogic.checkForWinner(index)
   console.log(`winner is ${winner}`)
 
+  // PATCH request to API to update game state
+  api.updateGame(index, winner)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
+
   // If there is a winner, display winner message and add option to start new game
   if (winner) {
     $('#results-div').removeClass('hidden')
@@ -60,10 +66,10 @@ const onBlockSelect = (event) => {
     gameLogic.switchTurn() // switch turn and update turn message if the game is still ongoing
   }
 
-  // PATCH request to API to update game state
-  api.updateGame(index, winner)
-    .then(ui.updateGameSuccess)
-    .catch(ui.updateGameFailure)
+  // debugging faulty winner logic
+  if (winner) {
+    console.log(`there has been a winner, here is the board \n`, store.game.cells)
+  }
 }
 
 const onPlayAgain = () => { // does this get used anywhere??????
