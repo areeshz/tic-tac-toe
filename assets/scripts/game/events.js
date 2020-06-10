@@ -59,6 +59,8 @@ const onBlockSelect = (event) => {
 
   // If there is a winner, display winner message and add option to start new game
   if (winner) {
+    // Prevent any additional moves from being made on the board
+    $('.game-box').off('click', onBlockSelect)
     $('#results-div').removeClass('hidden')
     $('#play-again-button').on('click', onNewGame)
     $('#play-again-div').removeClass('hidden')

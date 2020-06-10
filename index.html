@@ -19,8 +19,8 @@
               <p id="message" class="hidden"></p>
             </div>
             <div class="col-6 nav-bar right">
-              <a href="./" id="sign-out-button" class="hidden">Sign Out</a>
-              <a href="./" id="change-pw-button" class="hidden">Change Password</a>
+              <a href="./" id="change-pw-button" class="hidden btn btn-secondary btn-sm">Change Password</a>
+              <a href="./" id="sign-out-button" class="hidden btn btn-secondary btn-sm">Sign Out</a>
             </div>
           </div>
         </div>
@@ -57,11 +57,11 @@
       <section id="change-pw-section" class="auth-form hidden page">
         <form id="change-pw-form">
           <h2>Change Password</h2>
-          <input type="password" required placeholder="Old Password" name="passwords[old]">
-          <input type="password" required placeholder="New Password" name="passwords[new]">
-          <button type="submit">Change Password</button>
+          <input class="form-control" type="password" required placeholder="Old Password" name="passwords[old]">
+          <input class="form-control" type="password" required placeholder="New Password" name="passwords[new]">
+          <button class="btn btn-success" type="submit">Change Password</button>
         </form>
-        <button class="to-home">Back to Home</button>
+        <button class="to-home btn btn-primary">Back to Home</button>
       </section>
 
       <section id="home-page" class="home hidden page">
@@ -107,6 +107,71 @@
 
         </article>
         <button class="to-home btn btn-primary">Back to Home</button>
+      </section>
+
+      <section id="customize-section" class="customize hidden">
+        <h1>Customize</h1>
+
+        <div class="container card-array">
+          <h2>Choose Player 1's Game Piece</h2>
+          <div class="row">
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="assets/game-pieces/x.png" height="150rem" alt="Card image cap">
+                <div class="card-body">
+                  <button class="btn btn-primary">Choose X</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="assets/game-pieces/cat.png" height="150rem" alt="Card image cap">
+                <div class="card-body">
+                  <button class="btn btn-primary">Choose Cat</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="assets/game-pieces/penguin.png" height="150rem" alt="Card image cap">
+                <div class="card-body">
+                  <button class="btn btn-primary">Choose Penguin</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container card-array">
+          <h2>Choose Player 2's Game Piece</h2>
+          <div class="row">
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="assets/game-pieces/circle.png" height="150rem" alt="Card image cap">
+                <div class="card-body">
+                  <button class="btn btn-primary">Choose O</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="assets/game-pieces/dog.png" height="150rem" alt="Card image cap">
+                <div class="card-body">
+                  <button class="btn btn-primary">Choose Dog</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="assets/game-pieces/eagle.png" height="150rem" alt="Card image cap">
+                <div class="card-body">
+                  <button class="btn btn-primary">Choose Eagle</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </body>

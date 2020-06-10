@@ -46,8 +46,7 @@ const checkForWinner = (index) => {
         $('#results-message').text(`oof, it's a tie!`).removeClass().addClass('neutral')
     }
 
-    // Prevent any additional moves from being made on the board
-    $('.game-box').off('click', events.onBlockSelect)
+
   }
 
   return winnerFound
