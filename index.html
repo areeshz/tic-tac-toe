@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <!-- Nav element to contain status messages and auth buttons -->
       <nav>
         <div class="container nav-container">
           <div class="row">
@@ -27,6 +28,7 @@
 
       </nav>
 
+      <!-- Sign Up Page -->
       <section id="sign-up-section" class="auth-form hidden page">
         <h1>Tic Tac Toe</h1>
 
@@ -41,6 +43,7 @@
 
       </section>
 
+      <!-- Sign In Page -->
       <section id="sign-in-section" class="auth-form page">
         <h1>Tic Tac Toe</h1>
 
@@ -54,6 +57,7 @@
 
       </section>
 
+      <!-- Change Password Page -->
       <section id="change-pw-section" class="auth-form hidden page">
         <form id="change-pw-form">
           <h2>Change Password</h2>
@@ -64,6 +68,7 @@
         <button class="to-home btn btn-primary">Back to Home</button>
       </section>
 
+      <!-- Home Page (upon login) -->
       <section id="home-page" class="home hidden page">
         <h1>Home Page</h1>
         <nav>
@@ -73,6 +78,7 @@
         </nav>
       </section>
 
+      <!-- Game Board Page -->
       <section id="game-board-section" class="hidden game page">
         <h1>Tic Tac Toe</h1>
         <div id="results-div">
@@ -99,9 +105,39 @@
             <div id="block-8" class="col-4 game-box right bottom"></div>
           </div>
         </div>
-        <button class="to-home btn btn-primary">Back to Home</button>
+
+        <!-- Button to trigger modal -->
+        <div id="modal-button-div">
+          <button id="home-modal-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#homeModal">
+            Back to Home
+          </button>
+        </div>
+
+
+        <!-- Modal to display if trying to go to home page during a game -->
+        <div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="homeModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="homeModalLabel">Back to Home Page</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to go back to the home page? You will lose the progress of your current game.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary to-home" data-dismiss="modal">Back to Home</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
+      <!-- Stats Page -->
       <section id="stats-section" class="stats hidden page">
         <h1>Statistics</h1>
         <article id="stats-list">
@@ -110,10 +146,11 @@
         <button class="to-home btn btn-primary">Back to Home</button>
       </section>
 
+      <!-- Customization Page -->
       <section id="customize-section" class="customize hidden page">
         <h1>Customize</h1>
 
-        <!-- Trying themes -->
+        <!-- Theme Options Dropdown -->
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Color Scheme
@@ -126,8 +163,9 @@
             <button id="theme-gray" class="dropdown-item theme-button">Gray</button>
           </div>
         </div>
-        <!-- Finish trying themes -->
 
+        <!-- Game Piece Options Card Array -->
+        <!-- Player 1 Cards -->
         <div class="container card-array">
           <h2>Choose Player 1's Game Piece</h2>
           <div class="row">
@@ -158,6 +196,7 @@
           </div>
         </div>
 
+        <!-- Player 2 Cards -->
         <div class="container card-array">
           <h2>Choose Player 2's Game Piece</h2>
           <div class="row">

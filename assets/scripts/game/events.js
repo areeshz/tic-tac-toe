@@ -17,6 +17,9 @@ const onNewGame = (event) => {
   $('#play-again-div').addClass('hidden')
   $('#results-message').text("Player 1's Turn").removeClass()
 
+  // Unhide "back to home" button that triggers modal if you leave during a game
+  $('#modal-button-div').removeClass('hidden')
+
   // De-activate any click handlers that may have been present from a previous game
   $('.game-box').off('click', onBlockSelect)
 
@@ -64,6 +67,9 @@ const onBlockSelect = (event) => {
     $('#results-div').removeClass('hidden')
     $('#play-again-button').on('click', onNewGame)
     $('#play-again-div').removeClass('hidden')
+
+    // Hide modal button since game is over
+    $('#modal-button-div').addClass('hidden')
   } else {
     gameLogic.switchTurn() // switch turn and update turn message if the game is still ongoing
   }
