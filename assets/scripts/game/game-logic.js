@@ -37,16 +37,14 @@ const checkForWinner = (index) => {
   if (winnerFound) {
     switch (winner) {
       case 'x':
-        $('#results-message').text(`X is the winner!`).removeClass().addClass('success')
+        $('#results-message').text(`Player 1 is the winner!`).removeClass().addClass('success')
         break
       case 'o':
-        $('#results-message').text(`O is the winner!`).removeClass().addClass('failure')
+        $('#results-message').text(`Player 2 is the winner!`).removeClass().addClass('failure')
         break
       case 'tie':
         $('#results-message').text(`oof, it's a tie!`).removeClass().addClass('neutral')
     }
-
-
   }
 
   return winnerFound

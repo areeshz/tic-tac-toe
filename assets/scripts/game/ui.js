@@ -13,7 +13,7 @@ const renderNewGame = () => {
 
 const updateGameBoard = (block) => {
   // Create IMG tag with X or O's game image depending on player's turn, and add to game board
-  const imgSource = store.game.player1Move ? 'assets/game-pieces/x.png' : 'assets/game-pieces/circle.png'
+  const imgSource = store.game.player1Move ? store.src1 : store.src2
   const imgHtml = `<img class="block-image" src="${imgSource}" alt="">`
   $(block).html(imgHtml)
   console.log(`x's move? `, store.game.player1Move) // **remove once function is finished

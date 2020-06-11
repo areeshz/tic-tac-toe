@@ -22,5 +22,8 @@ $(() => {
   // Game/inner-app related handlers
   $('#new-game-button').on('click', gameEvents.onNewGame)
   $('#stats-button').on('click', gameEvents.onStatsPage)
+  $('#customize-button').on('click', gameEvents.onCustomize)
   $('.to-home').on('click', gameEvents.toHome)
+  $('.custom-button-1').on('click', gameEvents.changeSymbolOne)
+  $('.custom-button-2').on('click', gameEvents.changeSymbolTwo)
 })

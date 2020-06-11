@@ -73,13 +73,12 @@ const signOutSuccess = () => {
   $('#sign-out-button').addClass('hidden')
   $('#change-pw-button').addClass('hidden')
 
-  // Hide all other pages and show sign-in page
-  // $('#game-board-section').addClass('hidden')
-  // $('#home-page').addClass('hidden')
-  // $('#change-pw-section').addClass('hidden')
-  // $('#sign-in-section').removeClass('hidden')
   $('.page').addClass('hidden')
   $('#sign-in-section').removeClass('hidden')
+
+  // Remove any custom game pieces selected
+  // console.log(events)
+  // console.log('removed customizations ui.js')
 
   setTimeout(() => {
     $('#message').hide(250)

@@ -45,7 +45,7 @@
         <h1>Tic Tac Toe</h1>
 
         <form id="sign-in-form">
-          <h2 id="quick-in" style="color: red">Sign In - Remove Quick In</h2>
+          <h2 id="quick-in">Sign In</h2>
           <input class="form-control" type="email" required placeholder="Email" name="credentials[email]">
           <input class="form-control" type="password" required placeholder="Password" name="credentials[password]">
           <button type="submit" class="btn btn-success">Sign In</button>
@@ -69,6 +69,7 @@
         <nav>
           <button id="new-game-button" class="btn btn-secondary">New Game</button>
           <button id="stats-button" class="btn btn-secondary">Stats</button>
+          <button id="customize-button" class="btn btn-secondary">Customize Experience</button>
         </nav>
       </section>
 
@@ -109,7 +110,7 @@
         <button class="to-home btn btn-primary">Back to Home</button>
       </section>
 
-      <section id="customize-section" class="customize hidden">
+      <section id="customize-section" class="customize hidden page">
         <h1>Customize</h1>
 
         <div class="container card-array">
@@ -117,25 +118,25 @@
           <div class="row">
             <div class="col-7 col-md-3 cardholder container">
               <div class="card" style="width: 100%;">
-                <img class="card-img-top" src="assets/game-pieces/x.png" height="150rem" alt="Card image cap">
+                <img class="card-img-top" src="assets/game-pieces/x.png" height="150" alt="Card image cap">
                 <div class="card-body">
-                  <button class="btn btn-primary">Choose X</button>
+                  <button id="x" class="btn btn-success custom-button-1">Choose X</button>
                 </div>
               </div>
             </div>
             <div class="col-7 col-md-3 cardholder container">
               <div class="card" style="width: 100%;">
-                <img class="card-img-top" src="assets/game-pieces/cat.png" height="150rem" alt="Card image cap">
+                <img class="card-img-top" src="assets/game-pieces/cat.png" height="150" alt="Card image cap">
                 <div class="card-body">
-                  <button class="btn btn-primary">Choose Cat</button>
+                  <button id="cat" class="btn btn-primary custom-button-1">Choose Cat</button>
                 </div>
               </div>
             </div>
             <div class="col-7 col-md-3 cardholder container">
               <div class="card" style="width: 100%;">
-                <img class="card-img-top" src="assets/game-pieces/penguin.png" height="150rem" alt="Card image cap">
+                <img class="card-img-top" src="assets/game-pieces/penguin.png" height="150" alt="Card image cap">
                 <div class="card-body">
-                  <button class="btn btn-primary">Choose Penguin</button>
+                  <button id="penguin" class="btn btn-primary custom-button-1">Choose Penguin</button>
                 </div>
               </div>
             </div>
@@ -147,31 +148,31 @@
           <div class="row">
             <div class="col-7 col-md-3 cardholder container">
               <div class="card" style="width: 100%;">
-                <img class="card-img-top" src="assets/game-pieces/circle.png" height="150rem" alt="Card image cap">
+                <img class="card-img-top" src="assets/game-pieces/circle.png" height="150" alt="Card image cap">
                 <div class="card-body">
-                  <button class="btn btn-primary">Choose O</button>
+                  <button id="circle" class="btn btn-success custom-button-2">Choose O</button>
                 </div>
               </div>
             </div>
             <div class="col-7 col-md-3 cardholder container">
               <div class="card" style="width: 100%;">
-                <img class="card-img-top" src="assets/game-pieces/dog.png" height="150rem" alt="Card image cap">
+                <img class="card-img-top" src="assets/game-pieces/dog.png" height="150" alt="Card image cap">
                 <div class="card-body">
-                  <button class="btn btn-primary">Choose Dog</button>
+                  <button id="dog" class="btn btn-primary custom-button-2">Choose Dog</button>
                 </div>
               </div>
             </div>
             <div class="col-7 col-md-3 cardholder container">
               <div class="card" style="width: 100%;">
-                <img class="card-img-top" src="assets/game-pieces/eagle.png" height="150rem" alt="Card image cap">
+                <img class="card-img-top" src="assets/game-pieces/eagle.png" height="150" alt="Card image cap">
                 <div class="card-body">
-                  <button class="btn btn-primary">Choose Eagle</button>
+                  <button id="eagle" class="btn btn-primary custom-button-2">Choose Eagle</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        <button class="to-home btn btn-primary">Back to Home</button>
       </section>
 
     </body>

@@ -83,10 +83,32 @@ const toHome = () => {
   $('#home-page').removeClass('hidden')
 }
 
+const onCustomize = () => {
+  $('.page').addClass('hidden')
+  $('#customize-section').removeClass('hidden')
+}
+
+const changeSymbolOne = (event) => {
+  const btn = event.target
+  $('.custom-button-1').removeClass('btn-primary').removeClass('btn-success').addClass('btn-primary')
+  $(btn).removeClass('btn-primary').addClass('btn-success')
+  store.src1 = `assets/game-pieces/${btn.id}.png`
+}
+
+const changeSymbolTwo = (event) => {
+  const btn = event.target
+  $('.custom-button-2').removeClass('btn-primary').removeClass('btn-success').addClass('btn-primary')
+  $(btn).removeClass('btn-primary').addClass('btn-success')
+  store.src2 = `assets/game-pieces/${btn.id}.png`
+}
+
 module.exports = {
   onNewGame,
   onBlockSelect,
   onPlayAgain,
   onStatsPage,
-  toHome
+  toHome,
+  onCustomize,
+  changeSymbolOne,
+  changeSymbolTwo
 }

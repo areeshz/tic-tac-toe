@@ -21,7 +21,7 @@ h1 {
 }
 
 .nav-bar {
-  min-height: 40px;
+  min-height: 41px;
   display: flex;
   align-items: center;
   // flex-direction: row;
@@ -159,11 +159,15 @@ h1 {
 
 .customize {
   width: 75%;
-  border: 1px solid black;
+  // border: 1px solid black;
   margin: 0 auto;
   h2 {
     text-align: center;
     margin-bottom: 50px;
+  }
+  button {
+    display: block;
+    margin: 15px auto;
   }
 }
 
