@@ -7,8 +7,8 @@ const store = {
     cells: ['', '', '', '', '', '', '', '', '']
   },
   // Image sources for player game pieces
-  src1: 'assets/game-pieces/x.png',
-  src2: 'assets/game-pieces/circle.png'
+  src1: 'public/x.png',
+  src2: 'public/circle.png'
 }
 
 module.exports = store

@@ -93,7 +93,7 @@ const changeSymbolOne = (event) => {
   $(btn).removeClass('btn-primary').addClass('btn-success')
 
   // Change player 1 game piece image source
-  store.src1 = `assets/game-pieces/${btn.id}.png`
+  store.src1 = `public/${btn.id}.png`
 }
 
 const changeSymbolTwo = (event) => {
@@ -104,7 +104,7 @@ const changeSymbolTwo = (event) => {
   $(btn).removeClass('btn-primary').addClass('btn-success')
 
   // Change player 2 game piece image source
-  store.src2 = `assets/game-pieces/${btn.id}.png`
+  store.src2 = `public/${btn.id}.png`
 }
 
 const changeTheme = () => {
