@@ -9,9 +9,9 @@ const store = require('./../store.js')
 const quickIn = () => {
   const data = {
     credentials: {
-      email: 'works@test.com',
-      password: '123',
-      confirm_password: '123'
+      email: 'quick@quick.com',
+      password: 'quick',
+      confirm_password: 'quick'
     }
   }
 
