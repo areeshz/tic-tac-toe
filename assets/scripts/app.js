@@ -26,4 +26,5 @@ $(() => {
   $('.to-home').on('click', gameEvents.toHome)
   $('.custom-button-1').on('click', gameEvents.changeSymbolOne)
   $('.custom-button-2').on('click', gameEvents.changeSymbolTwo)
+  $('.theme-button').on('click', gameEvents.changeTheme)
 })

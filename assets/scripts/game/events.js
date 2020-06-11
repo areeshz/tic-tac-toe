@@ -102,6 +102,11 @@ const changeSymbolTwo = (event) => {
   store.src2 = `assets/game-pieces/${btn.id}.png`
 }
 
+const changeTheme = () => {
+  const theme = event.target.id
+  $('body').removeClass().addClass(theme)
+}
+
 module.exports = {
   onNewGame,
   onBlockSelect,
@@ -110,5 +115,6 @@ module.exports = {
   toHome,
   onCustomize,
   changeSymbolOne,
-  changeSymbolTwo
+  changeSymbolTwo,
+  changeTheme
 }

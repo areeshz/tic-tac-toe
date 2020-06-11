@@ -1,7 +1,58 @@
 @import '~bootstrap/scss/bootstrap';
 
+$nav-gray: rgb(190, 190, 190);
+$nav-blue: rgb(138, 144, 255);
+$nav-green: rgb(117, 255, 177);
+$nav-orange: rgb(255, 200, 117);
+$nav-purple: rgb(210, 138, 255);
+
+$body-blue: scale-color($nav-blue, $lightness: 80%);
+$body-green: scale-color($nav-green, $lightness: 80%);
+$body-orange: scale-color($nav-orange, $lightness: 80%);
+$body-gray: scale-color($nav-gray, $lightness: 80%);
+$body-purple: scale-color($nav-purple, $lightness: 80%);
+
+body {
+  background-color: $body-blue;
+}
+
+.theme-blue {
+  background-color: $body-blue;
+  & > nav {
+    background-color: $nav-blue;
+  }
+}
+
+.theme-green {
+  background-color: $body-green;
+  & > nav {
+    background-color: $nav-green;
+  }
+}
+
+.theme-orange {
+  background-color: $body-orange;
+  & > nav {
+    background-color: $nav-orange;
+  }
+}
+
+.theme-gray {
+  background-color: $body-gray;
+  & > nav {
+    background-color: $nav-gray;
+  }
+}
+
+.theme-purple {
+  background-color: $body-purple;
+  & > nav {
+    background-color: $nav-purple;
+  }
+}
+
 nav {
-  background-color: rgba(190, 190, 190, 1);
+  background-color: $nav-blue;
   p, a {
     font-size: 18px;
     // font-size: 100%;
@@ -174,6 +225,7 @@ h1 {
 .cardholder {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .card-array {

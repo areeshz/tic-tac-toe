@@ -59,7 +59,7 @@ const changePWSuccess = () => {
 
 const changePWFailure = () => {
   $('form').trigger('reset')
-  $('#change-pw-section').addClass('hidden')
+  // $('#change-pw-section').addClass('hidden')
   $('#message').text('Password Change Unsuccessful').show(400).removeClass().addClass('failure')
 
   setTimeout(() => {

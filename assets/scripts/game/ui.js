@@ -57,7 +57,7 @@ const getGamesSuccess = (responseData) => {
     <p>Wins: ${store.stats.win}</p>
     <p>Losses: ${store.stats.loss}</p>
     <p>Ties: ${store.stats.tie}</p>
-    <p>Win/Loss Ratio: ${(store.stats.win / store.stats.loss).toFixed(2)}</p>
+    <p>Win/Loss Ratio: ${(store.stats.win / Math.max(store.stats.loss, 1)).toFixed(2)}</p>
     `)
   console.log(store)
   $('#stats-list').html(statsHtml)

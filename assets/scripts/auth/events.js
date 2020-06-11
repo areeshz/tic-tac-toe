@@ -92,6 +92,7 @@ const removeCustomizations = () => {
   $('.custom-button-2').removeClass('btn-primary').removeClass('btn-success').addClass('btn-primary')
   $('#x').removeClass('btn-primary').addClass('btn-success')
   $('#circle').removeClass('btn-primary').addClass('btn-success')
+  $('body').removeClass().addClass('theme-blue')
 }
 
 module.exports = {
