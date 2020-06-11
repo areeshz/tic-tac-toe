@@ -16,21 +16,20 @@ const updateGameBoard = (block) => {
   const imgSource = store.game.player1Move ? store.src1 : store.src2
   const imgHtml = `<img class="block-image" src="${imgSource}" alt="">`
   $(block).html(imgHtml)
-  console.log(`x's move? `, store.game.player1Move) // **remove once function is finished
 }
 
 const newGameSuccess = (responseData) => {
+  // Display success message
   $('#message').text(`New Game`).show(400).removeClass().addClass('success')
-  console.log('responseData is \n', responseData)
-  // store.game.over = false
+  // Store new game id
   store.game.id = responseData.game._id
-  console.log('store is \n', store)
   setTimeout(() => {
     $('#message').hide(250)
   }, 1500)
 }
 
 const newGameFailure = () => {
+  // Display failure message
   $('#message').text(`New Game Failed!`).show(400).removeClass().addClass('failure')
 
   setTimeout(() => {
@@ -39,19 +38,26 @@ const newGameFailure = () => {
 }
 
 const updateGameSuccess = (responseData) => {
-  console.log('game updated successfully')
-  console.log(`this is the responseData: `, responseData)
+  // Store patch data
+  store.patchData = responseData
 }
 
 const updateGameFailure = () => {
-  console.log(`game update FAILED`)
+  // Display failure message
+  $('#message').text(`Game Update Failed!`).show(400).removeClass().addClass('failure')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 const getGamesSuccess = (responseData) => {
-  console.log(responseData)
   const games = responseData.games
+
+  // Calculate game statistics from API games array response
   gameLogic.countWins(games)
 
+  // Generate html for stats list
   const statsHtml = (`
     <p>Games Completed: ${responseData.games.length}</p>
     <p>Wins: ${store.stats.win}</p>
@@ -59,14 +65,20 @@ const getGamesSuccess = (responseData) => {
     <p>Ties: ${store.stats.tie}</p>
     <p>Win/Loss Ratio: ${(store.stats.win / Math.max(store.stats.loss, 1)).toFixed(2)}</p>
     `)
-  console.log(store)
+
+  // Display stats list page with generated html
   $('#stats-list').html(statsHtml)
   $('#home-page').addClass('hidden')
   $('#stats-section').removeClass('hidden')
 }
 
 const getGamesFailure = () => {
-  console.log('something went wrong')
+  // Display failure message
+  $('#message').text(`Stats failed!`).show(400).removeClass().addClass('failure')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 
 module.exports = {

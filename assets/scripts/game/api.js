@@ -15,7 +15,6 @@ const createGame = () => {
 
 const updateGame = (index, over) => {
   const player = store.game.player1Move ? 'x' : 'o'
-  console.log(`about to update api, here's the move: player: ${player}, move: ${index}`)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game.id,
@@ -29,24 +28,6 @@ const updateGame = (index, over) => {
           value: player
         },
         over: over
-      }
-    }
-  })
-}
-
-const finishGame = () => {
-  return $.ajax({
-    method: 'PATCH',
-    url: config.apiUrl + '/games/' + store.game.id,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: {
-      game: {
-        cell: {
-
-        },
-        over: true
       }
     }
   })
@@ -66,6 +47,5 @@ const getGames = (over) => {
 module.exports = {
   createGame,
   updateGame,
-  finishGame,
   getGames
 }

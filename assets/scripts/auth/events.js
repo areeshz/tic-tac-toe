@@ -5,7 +5,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('./../store.js')
 
-// Remove quick sign in for production version
+// (hidden) quick sign-in option
 const quickIn = () => {
   const data = {
     credentials: {
@@ -36,7 +36,6 @@ const onSignIn = (event) => {
 
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
 
   api.signIn(data)
     .then(ui.signInSuccess)
@@ -63,6 +62,7 @@ const onSignOut = (event) => {
     .catch(ui.signOutFailure)
 }
 
+// Switch page view from sign-in to sign-up
 const toSignUp = (event) => {
   event.preventDefault()
 
@@ -70,6 +70,7 @@ const toSignUp = (event) => {
   $('#sign-up-section').removeClass('hidden')
 }
 
+// Switch page view from sign-up to sign-in
 const toSignIn = (event) => {
   event.preventDefault()
 
@@ -77,6 +78,7 @@ const toSignIn = (event) => {
   $('#sign-in-section').removeClass('hidden')
 }
 
+// Switch page view to password-change
 const toChangePW = (event) => {
   event.preventDefault()
 
@@ -84,8 +86,8 @@ const toChangePW = (event) => {
   $('#change-pw-section').removeClass('hidden')
 }
 
+// Resets all selected customizations upon sign-out
 const removeCustomizations = () => {
-  console.log('removing customizations events.js')
   store.src1 = `assets/game-pieces/x.png`
   store.src2 = `assets/game-pieces/circle.png`
   $('.custom-button-1').removeClass('btn-primary').removeClass('btn-success').addClass('btn-primary')

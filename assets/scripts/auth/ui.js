@@ -2,6 +2,7 @@
 const store = require('./../store.js')
 
 const signUpSuccess = (responseData) => {
+  // Display sign up success and direct user to sign-in page
   $('form').trigger('reset')
   $('#message').text(`Sign Up Successful! Welcome ${responseData.user.email}.`).show(400).removeClass().addClass('success')
   $('.page').addClass('hidden')
@@ -14,6 +15,7 @@ const signUpSuccess = (responseData) => {
 
 const signUpFailure = () => {
   $('form').trigger('reset')
+  // Display failure message
   $('#message').text('Sign Up Failure! Please check that your confirm password is correct.').show(400).removeClass().addClass('failure')
 
   setTimeout(() => {
@@ -23,22 +25,25 @@ const signUpFailure = () => {
 
 const signInSuccess = (responseData) => {
   $('form').trigger('reset')
-  $('#message').text(`Sign In Successful! Welcome ${responseData.user.email}`).show(400).removeClass().addClass('success')
+  // Display sign-in success message
+  $('#message').text(`Sign In Successful!`).show(400).removeClass().addClass('success')
+  $('#welcome-message').text(`Welcome, ${responseData.user.email}`)
 
   store.user = responseData.user
   setTimeout(() => {
     $('#message').hide(250)
   }, 2500)
 
+  // Reveal home page to user, with change-password and sign-out options
   $('#sign-in-section').addClass('hidden')
   $('#sign-out-button').removeClass('hidden')
   $('#change-pw-button').removeClass('hidden')
   $('#home-page').removeClass('hidden')
-  // $('#game-board-section').removeClass('hidden') // Move this to when the new game button is clicked on home page
 }
 
 const signInFailure = () => {
   $('form').trigger('reset')
+  // Display failure message
   $('#message').text('Sign In Failure. Either the Email or Password is incorrect.').show(400).removeClass().addClass('failure')
 
   setTimeout(() => {
@@ -48,6 +53,7 @@ const signInFailure = () => {
 
 const changePWSuccess = () => {
   $('form').trigger('reset')
+  // Direct user back to home page and display success message
   $('#change-pw-section').addClass('hidden')
   $('#home-page').removeClass('hidden')
   $('#message').text('Password Changed Successfully').show(400).removeClass().addClass('success')
@@ -59,7 +65,7 @@ const changePWSuccess = () => {
 
 const changePWFailure = () => {
   $('form').trigger('reset')
-  // $('#change-pw-section').addClass('hidden')
+  // Display failure message
   $('#message').text('Password Change Unsuccessful').show(400).removeClass().addClass('failure')
 
   setTimeout(() => {
@@ -73,12 +79,9 @@ const signOutSuccess = () => {
   $('#sign-out-button').addClass('hidden')
   $('#change-pw-button').addClass('hidden')
 
+  // Redirect user to sign-in page
   $('.page').addClass('hidden')
   $('#sign-in-section').removeClass('hidden')
-
-  // Remove any custom game pieces selected
-  // console.log(events)
-  // console.log('removed customizations ui.js')
 
   setTimeout(() => {
     $('#message').hide(250)
@@ -86,6 +89,7 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
+  // Display failure message
   $('#message').text('Sign Out Unsuccessful').show(400).removeClass().addClass('failure')
 
   setTimeout(() => {

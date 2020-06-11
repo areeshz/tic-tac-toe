@@ -33,7 +33,6 @@ const onNewGame = (event) => {
 }
 
 const onStatsPage = () => {
-  console.log('time to show some stats')
   // API GET call to retrieve user's game data
   api.getGames(true)
     .then(ui.getGamesSuccess)
@@ -53,7 +52,6 @@ const onBlockSelect = (event) => {
 
   // Stores move in local storage, checks the board to see if there is a winner
   const winner = gameLogic.checkForWinner(index)
-  console.log(`winner is ${winner}`)
 
   // PATCH request to API to update game state
   api.updateGame(index, winner)
@@ -62,7 +60,7 @@ const onBlockSelect = (event) => {
 
   // If there is a winner, display winner message and add option to start new game
   if (winner) {
-    // Prevent any additional moves from being made on the board
+    // Prevent any additional moves from being made on the board, show play again options
     $('.game-box').off('click', onBlockSelect)
     $('#results-div').removeClass('hidden')
     $('#play-again-button').on('click', onNewGame)
@@ -73,50 +71,52 @@ const onBlockSelect = (event) => {
   } else {
     gameLogic.switchTurn() // switch turn and update turn message if the game is still ongoing
   }
-
-  // debugging faulty winner logic
-  if (winner) {
-    console.log(`there has been a winner, here is the board \n`, store.game.cells)
-  }
-}
-
-const onPlayAgain = () => { // does this get used anywhere??????
-  console.log('time to play again')
 }
 
 const toHome = () => {
+  // Hide all pages, and show home page
   $('.page').addClass('hidden')
   $('#home-page').removeClass('hidden')
 }
 
 const onCustomize = () => {
+  // Hide all pages, and show customize page
   $('.page').addClass('hidden')
   $('#customize-section').removeClass('hidden')
 }
 
 const changeSymbolOne = (event) => {
   const btn = event.target
+
+  // Change button colors to highlight selected item
   $('.custom-button-1').removeClass('btn-primary').removeClass('btn-success').addClass('btn-primary')
   $(btn).removeClass('btn-primary').addClass('btn-success')
+
+  // Change player 1 game piece image source
   store.src1 = `assets/game-pieces/${btn.id}.png`
 }
 
 const changeSymbolTwo = (event) => {
   const btn = event.target
+
+  // Change button colors to highlight selected item
   $('.custom-button-2').removeClass('btn-primary').removeClass('btn-success').addClass('btn-primary')
   $(btn).removeClass('btn-primary').addClass('btn-success')
+
+  // Change player 2 game piece image source
   store.src2 = `assets/game-pieces/${btn.id}.png`
 }
 
 const changeTheme = () => {
   const theme = event.target.id
+
+  // Change theme class to selected theme
   $('body').removeClass().addClass(theme)
 }
 
 module.exports = {
   onNewGame,
   onBlockSelect,
-  onPlayAgain,
   onStatsPage,
   toHome,
   onCustomize,

@@ -16,10 +16,10 @@
       <nav>
         <div class="container nav-container">
           <div class="row">
-            <div class="col-6 nav-bar left">
+            <div class="col-7 col-sm-6 nav-bar left">
               <p id="message" class="hidden"></p>
             </div>
-            <div class="col-6 nav-bar right">
+            <div class="col-5 col-sm-6 nav-bar right">
               <a href="./" id="change-pw-button" class="hidden btn btn-secondary btn-sm">Change Password</a>
               <a href="./" id="sign-out-button" class="hidden btn btn-secondary btn-sm">Sign Out</a>
             </div>
@@ -71,6 +71,7 @@
       <!-- Home Page (upon login) -->
       <section id="home-page" class="home hidden page">
         <h1>Home Page</h1>
+        <h3 id="welcome-message"></h3>
         <nav>
           <button id="new-game-button" class="btn btn-secondary">New Game</button>
           <button id="stats-button" class="btn btn-secondary">Stats</button>
@@ -152,7 +153,7 @@
 
         <!-- Theme Options Dropdown -->
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose Color Scheme
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
