@@ -1,4 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
 $nav-gray: rgb(170, 170, 170);
 $nav-blue: rgb(138, 144, 255);
@@ -60,10 +62,17 @@ nav {
   }
 }
 
+* {
+  font-family: 'Varela Round', sans-serif;
+}
+
 h1 {
   text-align: center;
   margin: 5px;
+  font-family: 'Roboto Slab', serif;
 }
+
+
 
 .nav-container {
   width: 100%;
