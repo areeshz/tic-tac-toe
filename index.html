@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <!-- Nav element to contain status messages and auth buttons -->
+      <nav>
+        <div class="container nav-container">
+          <div class="row">
+            <div class="col-7 col-sm-6 nav-bar left">
+              <p id="message" class="hidden"></p>
+            </div>
+            <div class="col-5 col-sm-6 nav-bar right">
+              <a href="./" id="change-pw-button" class="hidden btn btn-secondary btn-sm">Change Password</a>
+              <a href="./" id="sign-out-button" class="hidden btn btn-secondary btn-sm">Sign Out</a>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Sign Up Page -->
+      <section id="sign-up-section" class="auth-form hidden page">
+        <h1>Tic Tac Toe</h1>
+
+        <form id="sign-up-form">
+          <h2>Sign Up</h2>
+          <input class="form-control" type="email" required placeholder="Email" name="credentials[email]">
+          <input class="form-control" type="password" required placeholder="Password" name="credentials[password]">
+          <input class="form-control" type="password" required placeholder="Confirm Password" name="credentials[password_confirmation]">
+          <button type="submit" class="btn btn-success">Sign Up</button>
+          <a href="./" id="toSignIn">Sign In</a>
+        </form>
+
+      </section>
+
+      <!-- Sign In Page -->
+      <section id="sign-in-section" class="auth-form page">
+        <h1>Tic Tac Toe</h1>
+
+        <form id="sign-in-form">
+          <h2 id="quick-in">Sign In</h2>
+          <input class="form-control" type="email" required placeholder="Email" name="credentials[email]">
+          <input class="form-control" type="password" required placeholder="Password" name="credentials[password]">
+          <button type="submit" class="btn btn-success">Sign In</button>
+          <a href="./" id="toSignUp">Sign Up</a>
+        </form>
+
+      </section>
+
+      <!-- Change Password Page -->
+      <section id="change-pw-section" class="auth-form hidden page">
+        <form id="change-pw-form">
+          <h2>Change Password</h2>
+          <input class="form-control" type="password" required placeholder="Old Password" name="passwords[old]">
+          <input class="form-control" type="password" required placeholder="New Password" name="passwords[new]">
+          <button class="btn btn-success" type="submit">Change Password</button>
+        </form>
+        <button class="to-home btn btn-primary">Back to Home</button>
+      </section>
+
+      <!-- Home Page (upon login) -->
+      <section id="home-page" class="home hidden page">
+        <h1>Home Page</h1>
+        <h3 id="welcome-message"></h3>
+        <nav>
+          <button id="new-game-button" class="btn btn-secondary">New Game</button>
+          <button id="stats-button" class="btn btn-secondary">Stats</button>
+          <button id="customize-button" class="btn btn-secondary">Customize Experience</button>
+        </nav>
+      </section>
+
+      <!-- Game Board Page -->
+      <section id="game-board-section" class="hidden game page">
+        <h1>Tic Tac Toe</h1>
+        <div id="results-div">
+          <h2 id="results-message"></h2>
+        </div>
+        <div id="play-again-div" class="hidden">
+          <button id="play-again-button" class="btn btn-primary">Play Again?</button>
+          <button class="to-home btn btn-primary">Back to Home</button>
+        </div>
+        <div class="container board">
+          <div class="row flex-nowrap">
+            <div id="block-0" class="col-4 game-box left top"></div>
+            <div id="block-1" class="col-4 game-box top"></div>
+            <div id="block-2" class="col-4 game-box right top"></div>
+          </div>
+          <div class="row flex-nowrap">
+            <div id="block-3" class="col-4 game-box left"></div>
+            <div id="block-4" class="col-4 game-box"></div>
+            <div id="block-5" class="col-4 game-box right"></div>
+          </div>
+          <div class="row flex-nowrap">
+            <div id="block-6" class="col-4 game-box left bottom"></div>
+            <div id="block-7" class="col-4 game-box bottom"></div>
+            <div id="block-8" class="col-4 game-box right bottom"></div>
+          </div>
+        </div>
+
+        <!-- Button to trigger modal -->
+        <div id="modal-button-div">
+          <button id="home-modal-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#homeModal">
+            Back to Home
+          </button>
+        </div>
+
+
+        <!-- Modal to display if trying to go to home page during a game -->
+        <div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="homeModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="homeModalLabel">Back to Home Page</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to go back to the home page? You will lose the progress of your current game.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary to-home" data-dismiss="modal">Back to Home</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Stats Page -->
+      <section id="stats-section" class="stats hidden page">
+        <h1>Statistics</h1>
+        <article id="stats-list">
+
+        </article>
+        <button class="to-home btn btn-primary">Back to Home</button>
+      </section>
+
+      <!-- Customization Page -->
+      <section id="customize-section" class="customize hidden page">
+        <h1>Customize</h1>
+
+        <!-- Theme Options Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose Color Scheme
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button id="theme-blue" class="dropdown-item theme-button">Blue (Default)</button>
+            <button id="theme-green" class="dropdown-item theme-button">Green</button>
+            <button id="theme-orange" class="dropdown-item theme-button">Orange</button>
+            <button id="theme-purple" class="dropdown-item theme-button">Purple</button>
+            <button id="theme-gray" class="dropdown-item theme-button">Gray</button>
+          </div>
+        </div>
+
+        <!-- Game Piece Options Card Array -->
+        <!-- Player 1 Cards -->
+        <div class="container card-array">
+          <h2>Choose Player 1's Game Piece</h2>
+          <div class="row">
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="public/x.png" height="150" alt="Card image cap">
+                <div class="card-body">
+                  <button id="x" class="btn btn-success custom-button-1">Choose X</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="public/cat.png" height="150" alt="Card image cap">
+                <div class="card-body">
+                  <button id="cat" class="btn btn-primary custom-button-1">Choose Cat</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="public/penguin.png" height="150" alt="Card image cap">
+                <div class="card-body">
+                  <button id="penguin" class="btn btn-primary custom-button-1">Choose Penguin</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player 2 Cards -->
+        <div class="container card-array">
+          <h2>Choose Player 2's Game Piece</h2>
+          <div class="row">
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="public/circle.png" height="150" alt="Card image cap">
+                <div class="card-body">
+                  <button id="circle" class="btn btn-success custom-button-2">Choose O</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="public/dog.png" height="150" alt="Card image cap">
+                <div class="card-body">
+                  <button id="dog" class="btn btn-primary custom-button-2">Choose Dog</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-7 col-md-3 cardholder container">
+              <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="public/eagle.png" height="150" alt="Card image cap">
+                <div class="card-body">
+                  <button id="eagle" class="btn btn-primary custom-button-2">Choose Eagle</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="to-home btn btn-primary">Back to Home</button>
+      </section>
+
+    </body>
+</html>
